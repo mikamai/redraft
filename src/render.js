@@ -136,6 +136,13 @@ const renderGroup = (group, blockRenderers, rendered, params) => {
       data,
     }));
     return;
+  } else if (blockRenderers.$unmatched) {
+    rendered.push(blockRenderers.$unmatched(group, {
+      depth,
+      keys,
+      data,
+    }));
+    return;
   }
   rendered.push(group);
 };
